@@ -1,0 +1,17 @@
+.join{
+    &__container{
+        position: absolute;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        z-index: 11;
+        top:50%;
+        left:50%;
+        color:black;
+        background-color: white;
+        padding:25px;
+        transform: translate(-50%,-50%);
+    }
+        
+    
+    }
