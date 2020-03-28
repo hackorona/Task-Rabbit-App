@@ -58,6 +58,16 @@ export default () => {
             <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png'} />
         </section>
 
+        <section className="offer">
+            <div>
+                <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585333278/img/old_oxfb8u.png'}/>
+                <div>
+                    <strong>Or offer to be that helping hand</strong>
+                </div>
+            </div>
+            <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585395990/illustrations/offer_bnbzuo.png'}/>
+        </section>
+
         <section className="helped mb80">
             <div>
                 <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png'}/>

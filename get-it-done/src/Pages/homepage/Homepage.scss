@@ -94,6 +94,28 @@ input {
   }
 }
 
+.offer {
+  div {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    div {
+      display: inline-block;
+      height: 100%;
+      background-color: lightblue;
+      padding: 40px 0 160px 60px;
+      margin-top: 80px;
+      transform: translateX(-160px);
+    }
+  }
+  &>img {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    transform: translateY(160px);
+  }
+}
+
 .helped {
   display: flex;
   flex-direction: column;
