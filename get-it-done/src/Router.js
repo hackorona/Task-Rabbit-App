@@ -1,21 +1,20 @@
 import React from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 //cmps
 import Navbar from './Layout/Navbar';
+
 //Pages
-import Homepage from './Pages/Homepage';
+import Homepage from './Pages/homepage/Homepage';
 import DeedsPage from './Pages/DeedsPage';
 
 
-// import HomePage from './Pages/HomePage';
-
 const Router = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
      <Navbar/>
       <Route exact path="/deeds" component={DeedsPage} />
       <Route exact path="/" component={Homepage} />
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 export default Router;
