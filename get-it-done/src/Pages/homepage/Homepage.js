@@ -11,7 +11,7 @@ export default () => {
     )
 
     return (<>
-        <section className="community">
+        <section className="community mb80">
             <strong>Community is important</strong>
             <div>
                 <p>Want help or to be helpful?</p>
@@ -30,7 +30,7 @@ export default () => {
             </div>
         </section>
 
-        <section className="barbra">
+        <section className="barbra mb80">
             <div>
                 <strong>See who needs help in your community...</strong>
             </div>
@@ -39,7 +39,7 @@ export default () => {
             </div>
         </section>
 
-        <section style={{ backgroundColor: '#d9d6e5', overflow: 'auto' }}>
+        <section style={{ backgroundColor: '#d9d6e5', overflow: 'auto' }} className="mb80">
             <div className="help">
                 <strong style={{transform: 'translateY(-9rem)'}}>You can ask for help with...</strong>
                 <div id="help-options">
@@ -49,7 +49,7 @@ export default () => {
             </div>
         </section>
 
-        <section className="points">
+        <section className="points mb80">
             <div>
                 <strong>Earn points and badges, see who can help the most!</strong>
             </div>
@@ -58,7 +58,7 @@ export default () => {
             <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png'} />
         </section>
 
-        <section className="helped">
+        <section className="helped mb80">
             <div>
                 <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png'}/>
                 <strong>People helped so far</strong>

@@ -1,0 +1,13 @@
+@import 'variables';
+
+@for $size from 1 through 20 {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}#{$size * 4} {
+            margin-#{$side}: #{$size * 4}px;
+        }
+        
+        .p#{str-slice($side, 0, 1)}#{$size * 4} {
+            padding-#{$side}: #{$size * 4}px;
+        }
+    }
+}
