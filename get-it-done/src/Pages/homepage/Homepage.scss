@@ -1,0 +1,110 @@
+.community {
+  background-image: url("https://res.cloudinary.com/thelegend27/image/upload/v1585305496/hands.png");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  strong {
+    margin: 8rem;
+    position: absolute;
+    font-size: 6rem;
+  }
+
+  & > div {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+  }
+}
+
+strong {
+  color: black;
+  font-size: 5rem;
+}
+
+input {
+  padding: 16px;
+  border: solid #1a9dc7 2px;
+  border-radius: 8px;
+}
+
+.get-started {
+  background-color: #0fa5d6;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.help {
+  width: 90%;
+  margin: 40px auto;
+
+  strong {
+    position: absolute;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  figcaption {
+    color: black;
+    font-size: larger;
+    font-weight: bold;
+  }
+}
+
+.barbra-img {
+  float: right;
+  img {
+    position: absolute;
+    right: 20%;
+  }
+}
+
+.barbra {
+  height: 75vh;
+  position: relative;
+  div {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 49vw;
+    strong {
+      background-color: #d9d6e5;
+      display: block;
+      padding: 140px 0px 40px 40px;
+      margin: 40px;
+    }
+  }
+}
+
+.points {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: space-evenly;
+  div {
+    flex: 0.5;
+  }
+}
+
+.helped {
+  display: flex;
+  flex-direction: column;
+  .get-started {
+    font-size: 40px;
+  }
+  div {
+    margin: 20px auto;
+    * {
+      vertical-align: middle;
+      margin: auto 10px;
+    }
+  }
+}
