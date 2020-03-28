@@ -1,5 +1,5 @@
 const initialState = {
-  user: {name:'moshe'},
+  user: '',
   isConnected: false,
   feedPosts: [],
 };
@@ -9,11 +9,18 @@ function userReducer(state = initialState, action) {
     switch(action.type)
     {
         case 'LOGIN':
+          console.log('user reducer payload',payload,payload.user)
             return {
                 ...state,
-                user: { username: payload.username },
+                user: payload,
                 isConnected: true
             };
+        case 'LOGOUT':
+          return{
+            ...state,
+            user:'',
+            isConnected:false
+          }
             default:
       return state;
         }

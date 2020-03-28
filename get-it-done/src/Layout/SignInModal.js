@@ -1,13 +1,29 @@
 import React,{useState} from "react";
 import axios from 'axios';
-
+import { useDispatch} from "react-redux";
+import  {login} from '../Store/actions/actionCreators';
 export default props => {
+  const dispatch = useDispatch();
   const { onClose } = props;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
     const handleSubmit=async (e)=>{
       e.preventDefault();
-      //todo:send request to server  for login
+      if(username&&password)
+      {
+        const credentials={username,password};
+        const url='http://localhost:3001/user/login';
+        try{
+          const res=await axios.post(url,credentials);
+          console.log('success login',res.data);
+          dispatch(login(res.data));
+          onClose(false);
+        }catch(e){
+          console.log('error in  login')
+          //clear fields faild login
+        }
+      }
+ 
     }
   return (
     <section className="sign-in">

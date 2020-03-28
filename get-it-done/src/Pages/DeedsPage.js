@@ -1,5 +1,9 @@
-import React from 'react';
-
-export default ()=>{
-    return(<h1>deeds Page!!</h1>)
-}
+import React,{useState} from "react";
+import AddDeedModal from "../Layout/AddDeedModal";
+export default () => {
+    const [toggleAddModal,setToggleAddModal]=useState(false);
+  return <section className="deeds">
+        <button onClick={()=>setToggleAddModal(true)}>Add deed</button>
+        {toggleAddModal && <AddDeedModal onClose={setToggleAddModal}/>}
+  </section>;
+};
