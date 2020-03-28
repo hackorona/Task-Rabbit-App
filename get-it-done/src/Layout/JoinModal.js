@@ -12,7 +12,7 @@ export default props => {
   const [adress,setAdress]=useState('');
     const handleSubmit=async (e)=>{
       e.preventDefault();
-      console.log('handelingg');
+
       if(password===confirmPassword && username&& password&&email&&adress)
         {
           console.log('sending request');
@@ -34,7 +34,7 @@ export default props => {
   return (
     <section className="join">
       <div className="u-modal-backdrop" onClick={() => onClose(false)}></div>
-      <div className="join__container">
+      <div className=".u-modal-container">
         <h1 className="heading-sub"> Sign-in </h1>
         <form  className="u-form" onSubmit={handleSubmit}>
         <label name="username">username</label>

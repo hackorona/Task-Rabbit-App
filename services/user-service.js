@@ -2,41 +2,41 @@ const mongoService = require("./mongo-service");
 const uuid =require('uuid/v4');
 const ObjectId = require("mongodb").ObjectId;
 
-async function isUsernameExists(username){
-  const res = await  mongoService.connect().then(db =>
-    db.collection("users").find({"username":username}).count());
+// async function isUsernameExists(username){
+//   const res = await  mongoService.connect().then(db =>
+//     db.collection("users").find({"username":username}).count());
 
-return res>0;
-}
-function updateUserImg(data) {
-  const { userId, userImg } = data;
-  const id = new ObjectId(userId);
-  return mongoService.connect().then(db =>
-    db.collection("users").updateOne(
-      { _id: id },
-      {
-        $set: {
-          userImg: userImg
-        }
-      }
-    )
-  );
-}
+// return res>0;
+// }
+// function updateUserImg(data) {
+//   const { userId, userImg } = data;
+//   const id = new ObjectId(userId);
+//   return mongoService.connect().then(db =>
+//     db.collection("users").updateOne(
+//       { _id: id },
+//       {
+//         $set: {
+//           userImg: userImg
+//         }
+//       }
+//     )
+//   );
+// }
 
-function toggleLiketoPost(data) {
-  const { userId, userLikes } = data;
-  const id = new ObjectId(userId);
-  return mongoService.connect().then(db =>
-    db.collection("users").updateOne(
-      { _id: id },
-      {
-        $set: {
-          likes: userLikes
-        }
-      }
-    )
-  );
-}
+// function toggleLiketoPost(data) {
+//   const { userId, userLikes } = data;
+//   const id = new ObjectId(userId);
+//   return mongoService.connect().then(db =>
+//     db.collection("users").updateOne(
+//       { _id: id },
+//       {
+//         $set: {
+//           likes: userLikes
+//         }
+//       }
+//     )
+//   );
+// }
 function checkLogin(userCredentials) {
   const {username,password}=userCredentials;
   return mongoService.connect().then(db => {
@@ -69,39 +69,39 @@ function register(user) {
       return user;
     });;
 }
-function addPost(data)
-{
-  const {userId,postId}=data;
-  const id=new ObjectId(userId);
-  const obj={type:'post',postId:postId}
-  return mongoService.connect().then(db=>db.collection("users").updateOne({"_id":id},
-  {
-    $push: {
-      posts:obj
-    }
-  }))
-}
-function update(user) {
-  user._id = new ObjectId(user._id);
-  return mongoService
-    .connect()
-    .then(db =>
-      db.collection("users").updateOne({ _id: user._id }, { $set: { ...user } })
-    );
-}
-function getUserById(userId) {
-  const id = new ObjectId(userId);
-  return mongoService
-    .connect()
-    .then(db => db.collection("users").findOne({ _id: id }));
-}
+// function addPost(data)
+// {
+//   const {userId,postId}=data;
+//   const id=new ObjectId(userId);
+//   const obj={type:'post',postId:postId}
+//   return mongoService.connect().then(db=>db.collection("users").updateOne({"_id":id},
+//   {
+//     $push: {
+//       posts:obj
+//     }
+//   }))
+// }
+// function update(user) {
+//   user._id = new ObjectId(user._id);
+//   return mongoService
+//     .connect()
+//     .then(db =>
+//       db.collection("users").updateOne({ _id: user._id }, { $set: { ...user } })
+//     );
+// }
+// function getUserById(userId) {
+//   const id = new ObjectId(userId);
+//   return mongoService
+//     .connect()
+//     .then(db => db.collection("users").findOne({ _id: id }));
+// }
 
 module.exports = {
   checkLogin,
   register,
-  update,
-  toggleLiketoPost,
-  updateUserImg,
-  getUserById,addPost,isUsernameExists
+  // update,
+  // toggleLiketoPost,
+  // updateUserImg,
+  // getUserById,addPost,isUsernameExists
 
 };
