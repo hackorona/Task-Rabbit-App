@@ -17,15 +17,15 @@ export default () => {
                 <p>Want help or to be helpful?</p>
                 <p>Search your location to get started</p>
                 <div style={{ margin: '16px 0' }}>
-                    <input placeholder={'Location'} className="mr8" style={{ width: '60%' }} />
-                    <input placeholder={'Radius'} type={'number'} style={{ width: 'calc(40% - 8px)' }} />
+                    <input placeholder="Location" className="mr8" style={{ width: '60%' }} />
+                    <input placeholder="Radius" type="number" style={{ width: 'calc(40% - 8px)' }} />
                 </div>
                 <div className="actions">
                     <div>
-                        <input value={'Help out'} type={'button'} className="mr8" />
-                        <input value={'Be helped'} type={'button'} disabled />
+                        <input value="Help out" type="button" className="mr8" />
+                        <input value="Be helped" type="button" disabled />
                     </div>
-                    <input className="get-started" value={'Get Started'} type={'submit'} />
+                    <input className="get-started" value="Get Started" type="submit" />
                 </div>
             </div>
         </section>
@@ -35,7 +35,7 @@ export default () => {
                 <strong>See who needs help in your community...</strong>
             </div>
             <div className="barbra-img">
-                <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png'} />
+                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png" />
             </div>
         </section>
 
@@ -53,24 +53,24 @@ export default () => {
             <div>
                 <strong>Earn points and badges, see who can help the most!</strong>
             </div>
-            <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png'} />
-            <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png'} />
-            <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png'} />
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png" />
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png" />
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png" />
         </section>
 
         <section className="offer">
             <div>
-                <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585333278/img/old_oxfb8u.png'}/>
+                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333278/img/old_oxfb8u.png" />
                 <div>
                     <strong>Or offer to be that helping hand</strong>
                 </div>
             </div>
-            <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585395990/illustrations/offer_bnbzuo.png'}/>
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585395990/illustrations/offer_bnbzuo.png" />
         </section>
 
         <section className="helped mb80">
             <div>
-                <img src={'https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png'}/>
+                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png" />
                 <strong>People helped so far</strong>
             </div>
             <div>
