@@ -5,7 +5,7 @@ import helpOptions from './helpOptions';
 export default () => {
     const toHelperOption = (option) => (
         <figure key={option.desc}>
-            <img src={option.url} />
+            <img src={option.url} alt=""/>
             <figcaption>{option.desc}</figcaption>
         </figure>
     )
@@ -35,7 +35,7 @@ export default () => {
                 <strong>See who needs help in your community...</strong>
             </div>
             <div className="barbra-img">
-                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png" />
+                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png" alt="barbra-example" />
             </div>
         </section>
 
@@ -53,24 +53,24 @@ export default () => {
             <div>
                 <strong>Earn points and badges, see who can help the most!</strong>
             </div>
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png" />
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png" />
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png" />
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png" alt="doctor-badge"/>
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png" alt="grocery-badge"/>
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png" alt="lion-badge"/>
         </section>
 
         <section className="offer">
             <div>
-                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333278/img/old_oxfb8u.png" />
+                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333278/img/old_oxfb8u.png" alt="old-woman-smiling"/>
                 <div>
                     <strong>Or offer to be that helping hand</strong>
                 </div>
             </div>
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585395990/illustrations/offer_bnbzuo.png" />
+            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585395990/illustrations/offer_bnbzuo.png" alt="offer-to-help"/>
         </section>
 
         <section className="helped mb80">
             <div>
-                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png" />
+                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png" alt="amount-of-people-helped"/>
                 <strong>People helped so far</strong>
             </div>
             <div>
