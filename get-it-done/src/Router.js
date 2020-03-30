@@ -5,7 +5,7 @@ import Navbar from './Layout/Navbar';
 
 //Pages
 import Homepage from './Pages/homepage/Homepage';
-import DeedsPage from './Pages/DeedsPage';
+import DeedsPage from './Pages/deeds/DeedsPage';
 import UserPage from './Pages/userPage.js/UserPage'
 
 
