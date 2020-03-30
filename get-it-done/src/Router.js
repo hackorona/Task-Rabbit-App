@@ -5,14 +5,14 @@ import Navbar from './Layout/Navbar';
 
 //Pages
 import Homepage from './Pages/homepage/Homepage';
-import DeedsPage from './Pages/DeedsPage';
+import DeedsPage from './Pages/deeds/DeedsPage';
 
 
 const Router = () => {
   return (
     <BrowserRouter>
      <Navbar/>
-      <Route exact path="/deeds" component={DeedsPage} />
+      <Route path="/deeds" component={DeedsPage} />
       <Route exact path="/" component={Homepage} />
     </BrowserRouter>
   );
