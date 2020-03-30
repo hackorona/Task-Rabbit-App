@@ -1,25 +1,32 @@
 .community {
-  background-image: url("https://res.cloudinary.com/thelegend27/image/upload/v1585305496/hands.png");
+  background-image: url("https://res.cloudinary.com/explority/image/upload/v1585416648/Bitmap_bkfljn.png");
   width: 100vw;
-  height: 100vh;
+  height: 92vh;
+  padding:80px 0 0 80px;
+  margin-bottom: 16rem;
   background-repeat: no-repeat;
   background-size: cover;
-  strong {
-    margin: 8rem;
-    position: absolute;
-    font-size: 6rem;
+  background-position: center;
+
+  h1 {
+   
+    font-size: 7rem;
+    color: #2a2960;
+    font-family:monts-bold,sans-serif;
   }
 
-  & > div {
+  &__form-box {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 35%;
   }
 }
 
 strong {
-  color: black;
+  color: #2a2960;
   font-size: 5rem;
+  font-family:monts-bold,sans-serif;
+
 }
 
 input {
@@ -28,10 +35,7 @@ input {
   border-radius: 8px;
 }
 
-.get-started {
-  background-color: #0fa5d6;
-  color: white;
-}
+
 
 .actions {
   display: flex;
@@ -40,25 +44,60 @@ input {
 }
 
 .help {
-  width: 90%;
-  margin: 40px auto;
+width:100%;
+  margin: 0 auto;
+  background-color: #d9d6e5;
+padding:8rem 0;
+&__bottom-title{
+  text-align: end;
+  width: 93%;
+}
+&__title{
+  margin: 0 auto;
+  margin-bottom:8rem;
+  width:90%;
 
-  strong {
-    position: absolute;
+}
+ .help-options{
+  width:90%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  &__item{
+    
+    margin-bottom:60px;
+    width:90%;
+
+    img{
+
+      width:25rem;
+      height: 28rem;
+      object-fit: cover;
+    }
+    p{
+      width:25rem;
+      color:black;
+     
+    }
   }
 
-  div {
-    display: flex;
-    justify-content: space-between;
-  }
+ }
 
-  figcaption {
-    color: black;
-    font-size: larger;
-    font-weight: bold;
+
+}
+.offer-help{
+  padding:8rem 0;
+  .img-container{
+    margin:0 auto;
+    margin-top: 8rem;
+    width:500px;
+    img{
+      width:100%;
+      object-fit: cover;
+    }
+
   }
 }
-
 .barbra-img {
   float: right;
   img {
@@ -68,6 +107,7 @@ input {
 }
 
 .barbra {
+  margin-bottom: 16rem;
   height: 75vh;
   position: relative;
   div {
@@ -75,7 +115,7 @@ input {
     display: inline-block;
     height: 100%;
     width: 49vw;
-    strong {
+    h2 {
       background-color: #d9d6e5;
       display: block;
       padding: 140px 0px 40px 40px;
@@ -86,25 +126,38 @@ input {
 
 .points {
   display: flex;
-  margin-top: 40px;
+  width:90%;
+  margin:0 auto;
+  padding:8rem 0 ;
   align-items: center;
   justify-content: space-evenly;
   div {
-    flex: 0.5;
+  
   }
 }
 
 .helped {
   display: flex;
   flex-direction: column;
-  .get-started {
-    font-size: 40px;
-  }
-  div {
-    margin: 20px auto;
+  padding:8rem 0 ;
+
+ .helped-count {
+    margin: 50px auto;
     * {
       vertical-align: middle;
       margin: auto 10px;
+    }
+  }
+  .get-started-section{
+
+    margin: 0 auto;
+    .get-started-btn {
+      background-color: #0fa5d6;
+      color: white;
+      font-size: 4rem;
+      height:9rem;
+      margin-right:3rem;
+      
     }
   }
 }
