@@ -50,12 +50,8 @@ function getDeeds() {
   return mongoService
     .connect()
     .then(db => db.collection("deeds").find({}).sort({'createdAt':-1}).toArray())
-    .then(res => {
-      return res;
-    });
 }
 module.exports = {
   addDeed,
   getDeeds
-
 };

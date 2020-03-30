@@ -6,13 +6,15 @@ import Navbar from './Layout/Navbar';
 //Pages
 import Homepage from './Pages/homepage/Homepage';
 import DeedsPage from './Pages/deeds/DeedsPage';
+import UserPage from './Pages/userPage.js/UserPage'
 
 
 const Router = () => {
   return (
     <BrowserRouter>
      <Navbar/>
-      <Route path="/deeds" component={DeedsPage} />
+      <Route exact path="/deeds" component={DeedsPage} />
+      <Route exact path="/user/:userId" component={UserPage}/>
       <Route exact path="/" component={Homepage} />
     </BrowserRouter>
   );

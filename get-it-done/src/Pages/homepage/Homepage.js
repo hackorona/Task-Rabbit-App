@@ -1,82 +1,98 @@
-import React from 'react';
-import styles from './Homepage.scss';
-import helpOptions from './helpOptions';
+import React from "react";
+import styles from "./Homepage.scss";
+import helpOptions from "./helpOptions";
 
 export default () => {
-    const toHelperOption = (option) => (
-        <figure key={option.desc}>
-            <img src={option.url} alt="" />
-            <figcaption>{option.desc}</figcaption>
-        </figure>
-    )
 
-    return (<>
-        <section className="community mb80">
-            <strong>Community is important</strong>
+  return (
+    <>
+      <section className="community">
+        <h1>Community is</h1>
+        <h1> important</h1>
+        <div className="community__form-box">
+          <p>Want help or to be helpful?</p>
+          <p>Search your location to get started</p>
+          <div>
+            <input placeholder="Location" />
+            <input placeholder="Radius" type="number" />
+          </div>
+          <div className="actions">
             <div>
-                <p>Want help or to be helpful?</p>
-                <p>Search your location to get started</p>
-                <div style={{ margin: '16px 0' }}>
-                    <input placeholder="Location" className="mr8" style={{ width: '60%' }} />
-                    <input placeholder="Radius" type="number" style={{ width: 'calc(40% - 8px)' }} />
-                </div>
-                <div className="actions">
-                    <div>
-                        <input value="Help out" type="button" className="mr8" />
-                        <input value="Be helped" type="button" disabled />
-                    </div>
-                    <input className="get-started" value="Get Started" type="submit" />
-                </div>
+              <input value="Help out" type="button" className="" />
+              <input value="Be helped" type="button" disabled />
             </div>
-        </section>
+            <input className="get-started" value="Get Started" type="submit" />
+          </div>
+        </div>
+      </section>
 
-        <section className="barbra mb80">
-            <div>
-                <strong>See who needs help in your community...</strong>
-            </div>
-            <div className="barbra-img">
-                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png" alt="barbra-example" />
-            </div>
-        </section>
+      <section className="barbra">
+        <div>
+          <h2 className="sub-header">
+            See who needs help in your community...
+          </h2>
+        </div>
+        <div className="barbra-img">
+          <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png" />
+        </div>
+      </section>
 
-        <section style={{ backgroundColor: '#d9d6e5', overflow: 'auto' }} className="mb80">
-            <div className="help">
-                <strong style={{ transform: 'translateY(-9rem)' }}>You can ask for help with...</strong>
-                <div id="help-options">
-                    {helpOptions.map(toHelperOption)}
-                </div>
-                <strong style={{ right: '160px' }}>and much much more!</strong>
-            </div>
-        </section>
+      <section>
+        <div className="help">
+          <h2 className="sub-header help__title">You can ask for help with...</h2>
+          <div className="help-options ">
+            {helpOptions.map((el, i) => {
+              return <div className="help-options__item" key={i}>
+                  <img src={el.url} />
+                    <p>{el.desc}</p>
+              </div>;
+            })}
+          </div>
+          <h2 className="sub-header help__bottom-title">and much much more!</h2>
+        </div>
+      </section>
+<section className="offer-help">
+    <h2 className="sub-header">Or offer to be that helping hand</h2>
+    <div className="img-container">
+        <img src="https://res.cloudinary.com/explority/image/upload/v1585492138/Group_14_zenycn.png"/>
+    </div>
 
-        <section className="points mb80">
-            <div>
-                <strong>Earn points and badges, see who can help the most!</strong>
-            </div>
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png" alt="doctor-badge" />
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png" alt="grocery-badge" />
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png" alt="lion-badge" />
-        </section>
+</section>
+      <section className="points">
+        <div>
+        <h2 className="sub-header">Earn points and badges, see who can help the most!</h2>
+        </div>
+        <img
+          src={
+            "https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png"
+          }
+        />
+        <img
+          src={
+            "https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png"
+          }
+        />
+        <img
+          src={
+            "https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png"
+          }
+        />
+      </section>
 
-        <section className="offer">
-            <div>
-                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333278/img/old_oxfb8u.png" alt="old-woman-smiling" />
-                <div>
-                    <strong>Or offer to be that helping hand</strong>
-                </div>
-            </div>
-            <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585395990/illustrations/offer_bnbzuo.png" alt="offer-to-help" />
-        </section>
-
-        <section className="helped mb80">
-            <div>
-                <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png" alt="amount-of-people-helped" />
-                <strong>People helped so far</strong>
-            </div>
-            <div>
-                <input type="button" value="Click here" className="get-started" />
-                <strong>to get started!</strong>
-            </div>
-        </section>
-    </>)
-}
+      <section className="helped mb80">
+        <div className="helped-count">
+          <img
+            src={
+              "https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png"
+            }
+          />
+          <strong>People helped so far</strong>
+        </div>
+        <div className="get-started-section">
+          <input type="button" value="Click here" className="get-started-btn" />
+          <strong>to get started!</strong>
+        </div>
+      </section>
+    </>
+  );
+};
