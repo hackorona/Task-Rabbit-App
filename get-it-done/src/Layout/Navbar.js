@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+
 //modals
 import SignInModal from "./SignInModal";
 import JoinModal from "./JoinModal";
@@ -23,8 +24,6 @@ const Navbar = props => {
     if (userFromStorage) {
       dispatch(login(userFromStorage));
     }
-
-
   }, [])
 
   return (
@@ -35,7 +34,7 @@ const Navbar = props => {
       </button>
       </div>
       <div style={{ justifyContent: 'center' }}>
-        <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585391297/img/logo_d6ciuu.png" />
+        <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585391297/img/logo_d6ciuu.png" alt="deeds-logo"/>
       </div>
 
       <div style={{ justifyContent: 'flex-end' }}>
