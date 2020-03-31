@@ -1,5 +1,5 @@
 @import 'base/reset.scss';
-
+@import 'components/button';
 
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
@@ -13,7 +13,6 @@
 @import 'base/utilities';
 @import 'base/general';
 
-@import 'components/button';
 @import 'layout/navbar.scss';
 @import 'layout/sign-in-modal.scss';
 @import 'layout/join-modal.scss';

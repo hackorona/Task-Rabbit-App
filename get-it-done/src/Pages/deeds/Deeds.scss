@@ -46,10 +46,18 @@
   }
 }
 
-.leaflet-container {
+.main-content > div {
   height: 70vh;
+}
+
+.leaflet-container {
   transition: flex-grow 200ms;
   &:not(.show) {
-    flex-grow: 0.00001; // Before Firefox 32, Firefox wasn't able to animate values starting or stopping at 0.
+    flex-grow: .00001; // Before Firefox 32, Firefox wasn't able to animate values starting or stopping at 0.
   }
+}
+
+.sub-route {
+  overflow-y: auto;
+  padding-right: 16px;
 }
