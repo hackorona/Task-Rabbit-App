@@ -1,10 +1,11 @@
-$color-primary: #7ed56f;
-$color-primary-light: #55c57a;
-$color-primary-dark: #28b485;
+:root {
+    --color-primary: #e67574;
+    --color-secondary: #292b5d;
+      --main-gray: #c0bfd5;
+}
 
-$color-grey-dark: #777;
-$color-black: black;
-$color-white: #fff;
-$color-grey-light-1:#f7f7f7;
+$color-primary: #e67574;
+$color-secondary: #292b5d;
+$main-gray: #c0bfd5;
 
 $sides: (top, bottom, left, right); 

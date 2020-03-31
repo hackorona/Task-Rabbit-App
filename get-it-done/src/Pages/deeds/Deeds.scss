@@ -1,0 +1,55 @@
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+
+  a {
+    color: var(--main-gray);
+    text-decoration: none;
+    font-weight: bold;
+
+    &.active {
+      border-bottom: solid var(--color-primary) 4px;
+      padding-bottom: 16px;
+      color: black;
+    }
+  }
+}
+
+.btn__new {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  > * {
+    flex: 1 1 0;
+
+    &:first-child {
+      flex: 2 1 0;
+      margin-right: 16px;
+    }
+  }
+}
+
+.links-divider {
+  background-color: var(--main-gray);
+  height: 4px;
+}
+
+.toggle {
+  display: flex;
+  float: right;
+  margin: 12px 0;
+  span {
+    margin-right: 2rem;
+  }
+}
+
+.leaflet-container {
+  height: 70vh;
+  transition: flex-grow 200ms;
+  &:not(.show) {
+    flex-grow: 0.00001; // Before Firefox 32, Firefox wasn't able to animate values starting or stopping at 0.
+  }
+}

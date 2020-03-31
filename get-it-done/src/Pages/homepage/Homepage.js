@@ -33,7 +33,8 @@ export default () => {
           </h2>
         </div>
         <div className="barbra-img">
-          <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png" />
+          <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333659/illustrations/barbra_zxstra.png"
+            alt="help barbra with shopping" />
         </div>
       </section>
 
@@ -41,51 +42,40 @@ export default () => {
         <div className="help">
           <h2 className="sub-header help__title">You can ask for help with...</h2>
           <div className="help-options ">
-            {helpOptions.map((el, i) => {
-              return <div className="help-options__item" key={i}>
-                  <img src={el.url} />
-                    <p>{el.desc}</p>
-              </div>;
-            })}
+            {helpOptions.map((el, i) => (
+              <div className="help-options__item" key={i}>
+                <img src={el.url} alt="" />
+                <p>{el.desc}</p>
+              </div>
+            ))}
           </div>
           <h2 className="sub-header help__bottom-title">and much much more!</h2>
         </div>
       </section>
-<section className="offer-help">
-    <h2 className="sub-header">Or offer to be that helping hand</h2>
-    <div className="img-container">
-        <img src="https://res.cloudinary.com/explority/image/upload/v1585492138/Group_14_zenycn.png"/>
-    </div>
+      <section className="offer-help">
+        <h2 className="sub-header">Or offer to be that helping hand</h2>
+        <div className="img-container">
+          <img src="https://res.cloudinary.com/explority/image/upload/v1585492138/Group_14_zenycn.png"
+            alt="old woman smiling" />
+        </div>
 
-</section>
+      </section>
       <section className="points">
         <div>
-        <h2 className="sub-header">Earn points and badges, see who can help the most!</h2>
+          <h2 className="sub-header">Earn points and badges, see who can help the most!</h2>
         </div>
-        <img
-          src={
-            "https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png"
-          }
-        />
-        <img
-          src={
-            "https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png"
-          }
-        />
-        <img
-          src={
-            "https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png"
-          }
-        />
+        <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png"
+          alt="doctor badge" />
+        <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/grocery.png"
+          alt="grocery badge" />
+        <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329314/badges/lion.png"
+          alt="lion badge" />
       </section>
 
       <section className="helped mb80">
         <div className="helped-count">
-          <img
-            src={
-              "https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png"
-            }
-          />
+          <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585333251/img/counter_kxfmd9.png"
+            alt="number of people helped" />
           <strong>People helped so far</strong>
         </div>
         <div className="get-started-section">
