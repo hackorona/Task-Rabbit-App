@@ -1,9 +1,11 @@
 @import 'base/reset.scss';
-@import 'components/button';
-
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
+@import 'components/button';
+@import '../Components/Help-Details.scss';
+
+
 
 
 @import 'base/fonts.scss';
@@ -19,4 +21,4 @@
 @import 'layout/new-request.scss';
 @import 'layout/new-offer.scss';
 
-@import 'pages/home';
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Help-Details.scss';
+import './Help-Details.scss';
 
 export default function HelpDetails({ urgency, distance, time, title, description }) {
     return (<>
@@ -8,7 +8,7 @@ export default function HelpDetails({ urgency, distance, time, title, descriptio
                 src="https://res.cloudinary.com/thelegend27/image/upload/v1585333256/img/hammer_i4afmv.png" alt="" />
             <div className="help-content">
                 <div>
-                    <h2 className="sub-header">{title}</h2>
+                    <h2 className="help-details__sub-header">{title}</h2>
                     <p>{description}</p>
                 </div>
                 <div className="help-extra-details">
@@ -19,7 +19,7 @@ export default function HelpDetails({ urgency, distance, time, title, descriptio
             </div>
             <div className="help-actions">
                 <button className="btn bg-secondary">Message</button>
-                <button className="btn btn-border fg-secondary">More info</button>
+                <button className="btn btn-more-info">More info</button>
             </div>
         </section>
         <hr className="help-divider" />

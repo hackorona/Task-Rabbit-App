@@ -28,7 +28,7 @@ export default () => {
 
       <section className="barbra">
         <div>
-          <h2 className="sub-header">
+          <h2 className="t-sub-header">
             See who needs help in your community...
           </h2>
         </div>
@@ -40,7 +40,7 @@ export default () => {
 
       <section>
         <div className="help">
-          <h2 className="sub-header help__title">You can ask for help with...</h2>
+          <h2 className="t-sub-header help__title">You can ask for help with...</h2>
           <div className="help-options ">
             {helpOptions.map((el, i) => (
               <div className="help-options__item" key={i}>
@@ -49,11 +49,11 @@ export default () => {
               </div>
             ))}
           </div>
-          <h2 className="sub-header help__bottom-title">and much much more!</h2>
+          <h2 className="t-sub-header help__bottom-title">and much much more!</h2>
         </div>
       </section>
       <section className="offer-help">
-        <h2 className="sub-header">Or offer to be that helping hand</h2>
+        <h2 className="t-sub-header">Or offer to be that helping hand</h2>
         <div className="img-container">
           <img src="https://res.cloudinary.com/explority/image/upload/v1585492138/Group_14_zenycn.png"
             alt="old woman smiling" />
@@ -62,7 +62,7 @@ export default () => {
       </section>
       <section className="points">
         <div>
-          <h2 className="sub-header">Earn points and badges, see who can help the most!</h2>
+          <h2 className="t-sub-header">Earn points and badges, see who can help the most!</h2>
         </div>
         <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585329313/badges/dr.png"
           alt="doctor badge" />

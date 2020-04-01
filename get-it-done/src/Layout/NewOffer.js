@@ -28,7 +28,7 @@ export default props => {
     <section className="new-offer">
       <div className="u-modal-backdrop" onClick={() => onClose(false)}></div>
       <div className="u-modal-container new-offer__wrapper">
-        <h1 className="sub-header"> New Offer</h1>
+        <h1 className="t-sub-header"> New Offer</h1>
         <div className="new-offer__wrapper-sub">
           <h3 className="strong-text">Offer-to help</h3>
           <form className="u-form" onSubmit={handleSubmit}>

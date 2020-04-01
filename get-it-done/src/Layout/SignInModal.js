@@ -27,7 +27,7 @@ export default props => {
     <section className="sign-in">
       <div className="u-modal-backdrop" onClick={() => onClose(false)}></div>
       <div className="sign-in__container">
-        <h1 className="sign-in__title sub-header"> Sign-in! </h1>
+        <h1 className="sign-in__title t-sub-header"> Sign-in! </h1>
         <div className="sign-in__input-wrapper">
           <p className="sign-in__sub-title">Sign-in to get started!</p>
           <form className="u-form" onSubmit={handleSubmit}>

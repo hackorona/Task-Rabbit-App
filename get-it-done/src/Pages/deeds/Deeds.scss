@@ -1,3 +1,11 @@
+
+.deeds-page{
+  margin-top: 1rem;
+  &__btns-container{
+    display:flex;
+    justify-content: space-between;
+  }
+}
 .links {
   display: flex;
   justify-content: space-between;
@@ -17,7 +25,8 @@
 }
 
 .btn__new {
-  width: 100%;
+width: 17rem;
+margin-top:.5rem;
 }
 
 .row {
@@ -51,6 +60,8 @@
 }
 
 .leaflet-container {
+  width:100%;
+  height: 100%;
   transition: flex-grow 200ms;
   &:not(.show) {
     flex-grow: .00001; // Before Firefox 32, Firefox wasn't able to animate values starting or stopping at 0.

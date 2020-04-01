@@ -35,7 +35,7 @@ export default props => {
       <div className="u-modal-container">
         <div className="join__wrapper">
 
-        <h1 className="join__title sub-header"> Sign-up! </h1>
+        <h1 className="join__title t-sub-header"> Sign-up! </h1>
         <div className="join__logo">
           <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585391297/img/logo_d6ciuu.png"/>
         </div>

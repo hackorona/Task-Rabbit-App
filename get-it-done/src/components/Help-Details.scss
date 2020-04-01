@@ -1,12 +1,30 @@
-.help-extra-details, .help-actions, .help-details, .help-content {
+.help-details {
+  &__sub-header {
+    font-size: 2rem;
+    font-family: monts-bold;
+    color: #292b5d;
+  }
+  .btn-more-info {
+    border: 1px solid var(--color-secondary);
+    background-color: white;
+    color: var(--color-secondary);
+  }
+}
+
+.help-extra-details,
+.help-actions,
+.help-details,
+.help-content {
   display: flex;
 }
 
-.help-details, .help-content {
+.help-details,
+.help-content {
   justify-content: space-between;
 }
 
-.help-actions, .help-content {
+.help-actions,
+.help-content {
   flex-direction: column;
 }
 
@@ -25,7 +43,7 @@
 }
 
 .help-extra-details {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .btn-border {
@@ -34,5 +52,5 @@
 }
 
 .help-divider {
-    margin: 16px 0;
+  margin: 16px 0;
 }
