@@ -1,0 +1,40 @@
+.new-offer{
+    &__wrapper{
+        padding:2.5rem 5rem;
+    }
+    &__wrapper-sub{
+        width:35rem;
+    }
+    input[type="radio"]{
+        display: none;
+    }
+    .type-radio-button-wrapper{
+        margin:20px 0 ;
+        display:flex;
+        justify-content: space-between;
+    }
+    .urgency-box{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:16px;
+    }
+    .radio-label{
+        border:1px solid $color-grey-dark;
+        padding: 0 .8rem;
+        cursor: pointer;
+    }
+    .stv-radio-button:checked + .radio-label{
+        border:2px solid black;
+    }
+    .radio-label-urgency{
+        border:1px solid $color-grey-dark;
+        padding: 0 .8rem;
+        margin-right:4px;
+        cursor: pointer;
+        font-size: 1.4rem;
+    }
+    .urgency-radio-button:checked +.radio-label-urgency{
+        border:2px solid black;
+    }
+}

@@ -59,7 +59,7 @@ function checkLogin(userCredentials) {
 //register user and add required fields
 //fields: name,password,email,adress,userImg
 function register(user) {
-  user.userUmg='';
+  user.userImg='';
   user.id=uuid();
   return mongoService
     .connect()
