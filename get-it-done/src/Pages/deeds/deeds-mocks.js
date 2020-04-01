@@ -9,6 +9,7 @@ const deeds = [
         description: 'She needs attention and love <3',
         adress: 'Ben Gurion 4, Tel Aviv',
         currentStatus: 'new',
+        urgency: 'low',
         isRequest: true
     },
     {
@@ -34,6 +35,32 @@ const deeds = [
         adress: 'Ben Gurion 44, Tel Aviv',
         currentStatus: 'new',
         isRequest: true
+    },
+    {
+        id: 23,
+        userId: 222,
+        createdAt: new Date(),
+        neededDay: 'tomorrow',
+        neededHour: 11,
+        title: 'Get me some pills',
+        description: 'It costs 12$',
+        adress: 'Ben Gurion 44, Tel Aviv',
+        currentStatus: 'new',
+        isRequest: true,
+        urgency: "high"
+    },
+    {
+        id: 11,
+        userId: 222,
+        createdAt: new Date(),
+        neededDay: 'tomorrow',
+        neededHour: 11,
+        title: 'Get me some pills',
+        description: 'It costs 12$',
+        adress: 'Ben Gurion 44, Tel Aviv',
+        currentStatus: 'new',
+        isRequest: true,
+        urgency: 'medium'
     }
 ]
 

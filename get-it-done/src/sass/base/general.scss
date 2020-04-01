@@ -1,16 +1,11 @@
-figure {
-  display: table;
-}
-
-figcaption {
-  display: table-caption;
-  caption-side: bottom;
-}
-
 input[type="button"], input[type="submit"], button {
   cursor: pointer;
 }
 
 body {
   overflow-x: hidden;
+}
+
+.sub-header {
+  font-size: 2rem;
 }

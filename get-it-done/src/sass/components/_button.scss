@@ -1,0 +1,9 @@
+.btn {
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    &:hover {
+        filter: brightness(1.1);
+    }
+}
