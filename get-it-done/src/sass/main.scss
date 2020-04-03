@@ -3,7 +3,9 @@
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 @import 'components/button';
-@import '../Components/Help-Details.scss';
+@import '../Components/HelpDetails/Help-Details.scss';
+@import '../Components/OfferDetails/OfferDetails.scss';
+@import '../Components/MyTaskDetails/MyTaskDetails.scss';
 
 
 
@@ -20,5 +22,6 @@
 @import 'layout/join-modal.scss';
 @import 'layout/new-request.scss';
 @import 'layout/new-offer.scss';
+@import 'layout/not-login-modal.scss';
 
 

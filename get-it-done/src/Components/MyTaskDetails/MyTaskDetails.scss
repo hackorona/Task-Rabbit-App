@@ -1,0 +1,57 @@
+.my-tasks-details {
+    &__sub-header {
+      font-size: 2rem;
+      font-family: monts-bold;
+      color: #292b5d;
+    }
+    .btn-more-info {
+      border: 1px solid var(--color-secondary);
+      background-color: white;
+      color: var(--color-secondary);
+    }
+  }
+  
+  .my-tasks-extra-details,
+  .my-tasks-actions,
+  .my-tasks-details,
+  .my-tasks-content {
+    display: flex;
+  }
+  
+  .my-tasks-details,
+  .my-tasks-content {
+    justify-content: space-between;
+  }
+  
+  .my-tasks-actions,
+  .my-tasks-content {
+    flex-direction: column;
+  }
+  
+  .my-tasks-content {
+    flex: 1;
+    margin: 0 40px;
+  }
+  
+  .my-tasks-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .my-tasks-actions {
+    justify-content: space-evenly;
+  }
+  
+  .my-tasks-extra-details {
+    justify-content: space-between;
+  }
+  
+  .btn-border {
+    border: 1px solid var(--color-secondary);
+    background-color: white;
+  }
+  
+  .my-tasks-divider {
+    margin: 16px 0;
+  }
+  

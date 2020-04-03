@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 import axios from "axios";
 export default props => {
-  const { onClose } = props;
+  const { onClose,userId } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [radius, setRadius] = useState("");
-  const [type, setType] = useState("");
+  const [helpType, setHelpType] = useState("");
   const handleSubmit = async e => {
     e.preventDefault();
-    if (title && description && location && radius && type) {
-      const userId = "das123";
-      console.log({ userId, title, description, location, radius, type });
-      const reqData = { userId, title, description, location, radius, type };
-      const url = "http://localhost:3001/deeds/addDeed";
-      // try{
-      //   const res=await axios.post(url,reqData);
-      //   console.log('success login',res.data);
-      //   onClose(false);
-      // }catch(e){
-      //   console.log('error in  login')
-      //   //clear fields faild login
-      // }
+    if (title && description && location && radius && helpType) {
+      console.log('new offer-',{ userId, title, description, location, radius,helpType });
+      const reqData = { userId, title, description, location, radius, helpType };
+      const url = "http://localhost:3001/deeds/addOffer";
+      try{
+        const res=await axios.post(url,reqData);
+        console.log('success login',res.data);
+        onClose(false);
+      }catch(e){
+        console.log('error in   new offer offer')
+        //clear fields faild login
+      }
     }
   };
   return (
@@ -45,7 +44,7 @@ export default props => {
               <label
                 for="button1"
                 className="radio-label"
-                onClick={() => setType("pets")}
+                onClick={() => setHelpType("pets")}
               >
                 Pets
               </label>
@@ -59,7 +58,7 @@ export default props => {
               <label
                 for="button2"
                 className="radio-label"
-                onClick={() => setType("groceries")}
+                onClick={() => setHelpType("groceries")}
               >
                 Groceries
               </label>
@@ -73,7 +72,7 @@ export default props => {
               <label
                 for="button3"
                 className="radio-label"
-                onClick={() => setType("medical")}
+                onClick={() => setHelpType("medical")}
               >
                 Medical
               </label>
@@ -87,7 +86,7 @@ export default props => {
               <label
                 for="button4"
                 className="radio-label"
-                onClick={() => setType("other")}
+                onClick={() => setHelpType("other")}
               >
                 Other
               </label>

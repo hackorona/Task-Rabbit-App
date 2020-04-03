@@ -8,20 +8,19 @@ const ObjectId = require("mongodb").ObjectId;
 
 // return res>0;
 // }
-// function updateUserImg(data) {
-//   const { userId, userImg } = data;
-//   const id = new ObjectId(userId);
-//   return mongoService.connect().then(db =>
-//     db.collection("users").updateOne(
-//       { _id: id },
-//       {
-//         $set: {
-//           userImg: userImg
-//         }
-//       }
-//     )
-//   );
-// }
+function addDeedToUser({userId,deedId}) {
+  const id = new ObjectId(userId);
+  return mongoService.connect().then(db =>
+    db.collection("users").updateOne(
+      { _id: id },
+      {
+        $push: {
+          "deeds": deedId
+        }
+      }
+    )
+  );
+}
 
 // function toggleLiketoPost(data) {
 //   const { userId, userLikes } = data;
@@ -50,6 +49,7 @@ function checkLogin(userCredentials) {
       })
       .then(user => {
         if (user) {
+          console.log('user',user)
           delete user.password;
         }
         return user;
@@ -57,10 +57,11 @@ function checkLogin(userCredentials) {
   });
 }
 //register user and add required fields
-//fields: name,password,email,adress,userImg
+//fields: name,password,email,adress,userImg,score
 function register(user) {
   user.userImg='';
-  user.id=uuid();
+  user.deeds=[];
+  user.score=120;
   return mongoService
     .connect()
     .then(db => db.collection("users").insertOne(user))
@@ -99,7 +100,7 @@ function register(user) {
 module.exports = {
   checkLogin,
   register,
-  // update,
+  addDeedToUser
   // toggleLiketoPost,
   // updateUserImg,
   // getUserById,addPost,isUsernameExists

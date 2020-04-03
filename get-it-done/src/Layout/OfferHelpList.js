@@ -1,10 +1,10 @@
 import React from 'react';
-import HelpDetails from '../Components/Help-Details';
+import OfferDetails from '../Components/OfferDetails/OfferDetails';
 export default props=>{
     const {offers}=props;
     return(<section className="offer-help-list">
               {offers.map((offer,i)=> (
-                <HelpDetails
+                <OfferDetails
                   title={offer.title}
                   description={offer.description}
                   distance="4 km"

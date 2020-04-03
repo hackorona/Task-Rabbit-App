@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 import SignInModal from "./SignInModal";
 import JoinModal from "./JoinModal";
 
-import { login } from '../Store/actions/actionCreators';
+import { login,logout } from '../Store/actions/actionCreators';
 import storageService from "../services/storageService";
 
 const Navbar = props => {
@@ -25,7 +25,10 @@ const Navbar = props => {
       dispatch(login(userFromStorage));
     }
   }, [])
+const handleLogout=()=>{
+  dispatch(logout);
 
+}
   return (
     <section className="navbar">
       <div>
@@ -38,8 +41,10 @@ const Navbar = props => {
       </div>
 
       <div style={{ justifyContent: 'flex-end' }}>
-        {isConnected ? (
-          <span><p>hello {user.username}!</p></span>
+        {isConnected ? (<span>
+          <span>score :  {user.score} </span>
+          <span onClick={handleLogout}>Logout</span>
+        </span>
         ) : (<>
           <button
             className="nav-item"

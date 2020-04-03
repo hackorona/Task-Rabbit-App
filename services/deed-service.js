@@ -1,6 +1,5 @@
 const mongoService = require("./mongo-service");
 const ObjectId = require("mongodb").ObjectId;
-const uuid =require('uuid/v4');
 
 // //every like to post is {userid,username,userimg}
 // function updateLikes(data){
@@ -39,12 +38,39 @@ const uuid =require('uuid/v4');
 //     comments:{commentText,userId,userImg,username}
 //   }}))
 // }
-function addDeed(deed) {
-  deed.createdAt = Date.now();
- deed.id=uuid();
+//offer
+//type 1(1 offer 2 help)
+//status 1(1active 2 done)
+//userId:id
+//helpType: (pets  medical etc)
+//acceptedOfferId
+//createdAt:timestamp
+//titl,description adress,radius - text
+function addOffer(offer) {
+  offer.type=1;
+  offer.status=1;
+  offer.acceptedOfferId='';
+  offer.createdAt = Date.now();
   return mongoService
     .connect()
-    .then(db => db.collection("deeds").insertOne(deed));
+    .then(db => db.collection("deeds").insertOne(offer));
+}
+//request
+//type 3(1 offer 2 request)
+//status 1(1active 2 done)
+//userId:id
+//helpType: text(pets  medical etc)
+//acceptedRequestId
+//createdAt:timestamp
+//title,description adress,radius,urgency - text
+function addRequest(request) {
+  request.type=2;
+  request.status=1;
+  request.acceptedRequestId='';
+  request.createdAt = Date.now();
+  return mongoService
+    .connect()
+    .then(db => db.collection("deeds").insertOne(request));
 }
 function getDeeds() {
   return mongoService
@@ -52,6 +78,7 @@ function getDeeds() {
     .then(db => db.collection("deeds").find({}).sort({'createdAt':-1}).toArray())
 }
 module.exports = {
-  addDeed,
-  getDeeds
+  addOffer,
+  getDeeds,
+  addRequest
 };

@@ -40,7 +40,7 @@ export default props => {
             <input
               placeholder="Password"
               className="u-input-style"
-              type="text"
+              type="password"
               name="password"
               onChange={e => setPassword(e.target.value)}
             />
