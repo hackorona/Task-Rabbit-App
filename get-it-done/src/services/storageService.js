@@ -11,5 +11,4 @@ function saveToStorage(key, val) {
 export default {
     loadFromStorage,
     saveToStorage
-
 }
