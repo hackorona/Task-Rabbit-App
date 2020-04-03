@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import {Switch, Route, NavLink, useRouteMatch, Redirect} from "react-router-dom";
+import { Switch, Route, NavLink, useRouteMatch, Redirect } from "react-router-dom";
 import "./Deeds.scss";
 import ToggleButton from "react-toggle-button";
 
@@ -60,12 +60,11 @@ export default function () {
   useEffect(() => {
     fetchDeeds();
     navigator.geolocation.getCurrentPosition(
-      //get user current position
       ({ coords }) => setPosition([coords.latitude, coords.longitude]),
       undefined,
       { enableHighAccuracy: true }
     );
-  }, []);
+  });
 
   const handleHelpClick = btnType => {
     if (!isConnected) {
@@ -80,64 +79,63 @@ export default function () {
     if (isConnected) setToggleOffer(true);
     else setToggleNotLogin(true);
   };
-    return (
-      <section className="deeds-page">
-        <div className="row">
-          <div>
+  return (
+    <section className="deeds-page">
+      <div className="row">
+        <div>
 
-            {/* modals  */}
-            {toggleNotLogin && <NotLoginModal onClose={setToggleNotLogin} />}
-            {toggleOffer && (
-              <NewOffer onClose={setToggleOffer} userId={userId} />
-            )}
-            {toggleRequest && (
-              <NewRequest onClose={setToggleRequest} userId={userId} />
-            )}
-            <section className="links">
-              <div>
-                {/* sub menu */}
-                <NavLink to={`${url}/help`} className="mr40">
-                  Offer to help
+          {/* modals  */}
+          {toggleNotLogin && <NotLoginModal onClose={setToggleNotLogin} />}
+          {toggleOffer && (
+            <NewOffer onClose={setToggleOffer} userId={userId} />
+          )}
+          {toggleRequest && (
+            <NewRequest onClose={setToggleRequest} userId={userId} />
+          )}
+          <section className="links">
+            <div>
+              {/* sub menu */}
+              <NavLink to={`${url}/help`} className="mr40">
+                Offer to help
                 </NavLink>
-                <NavLink to={`${url}/be-helped`}>Help requests</NavLink>
-              </div>
-              <div>
-                <NavLink to={`${url}/tasks`} className="mr8">
-                  My tasks
+              <NavLink to={`${url}/be-helped`}>Help requests</NavLink>
+            </div>
+            <div>
+              <NavLink to={`${url}/tasks`} className="mr8">
+                My tasks
                 </NavLink>
-              </div>
-            </section>
-            <hr className="links-divider" />
+            </div>
+          </section>
+          <hr className="links-divider" />
+        </div>
+        <div className="deeds-page__right-section">
+          <div className="deeds-page__btns-container">
+            <button
+              className="btn bg-primary btn__new"
+              onClick={handleNewOffer}>
+              Offer help
+              </button>
+            <button
+              className="btn bg-primary btn__new"
+              onClick={handleNewRequest}>
+              Request help
+              </button>
           </div>
-          <div className="deeds-page__right-section">
-            <div className="deeds-page__btns-container">
-              <button
-                className="btn bg-primary btn__new"
-                onClick={handleNewOffer}>
-                Offer help
-              </button>
-              <button
-                className="btn bg-primary btn__new"
-                onClick={handleNewRequest}>
-                Request help
-              </button>
-            </div>
 
-            <div className="toggle">
-              <span>show map?</span>
-              <ToggleButton
-                inactiveLabel=""
-                activeLabel=""
-                value={shouldShowMap}
-                onToggle={value => toggleMap(!value)}
-                colors={{ active: { base: "#fd6064" } }}
-              />
-            </div>
+          <div className="toggle">
+            <span>show map?</span>
+            <ToggleButton
+              inactiveLabel="" activeLabel=""
+              value={shouldShowMap}
+              onToggle={value => toggleMap(!value)}
+              colors={{ active: { base: "#fd6064" } }}/>
           </div>
         </div>
-        {/* main route area */}
-        <div className="row main-content">
-          <div className="sub-route">
+      </div>
+      {/* main route area */}
+      <div className="row main-content">
+        <div className="sub-route">
+          {isLoading ? "loading" : (
             <Switch>
               <Redirect exact from={path} to={`${path}/help`} />
               <Route path={`${path}/help`}>
@@ -153,15 +151,14 @@ export default function () {
                 <MyTasksList myTasks={myTasks} />
               </Route>
             </Switch>
-          </div>
-          {/* map area */}
-          <Map
-            center={position}
-            zoom={14}
-            attributionControl={false}
-            className={shouldShowMap && "show"}
-          />
+          )}
         </div>
-      </section>
-    );
+        {/* map area */}
+        <Map center={position} zoom={14}
+          attributionControl={false}
+          className={shouldShowMap && "show"}
+        />
+      </div>
+    </section>
+  );
 }

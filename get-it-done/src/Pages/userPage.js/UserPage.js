@@ -16,7 +16,7 @@ export default (props) => {
       }
     };
     fetchUserData();
-  }, []);
+  });
   if (!userData) return <h1>Loading...</h1>;
   else return <section className="user-page">
                     <ul>

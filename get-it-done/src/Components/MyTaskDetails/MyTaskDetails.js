@@ -3,7 +3,6 @@ import "./MyTaskDetails.scss";
 
 export default (props) => {
     const {task}=props;
-    console.log('taskis',task)
     const {title,description,type,status}=task;
   const distance = "800 meters";
   const time = "today";
