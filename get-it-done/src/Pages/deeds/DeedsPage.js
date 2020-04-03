@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import {Switch, Route, NavLink, useRouteMatch, Redirect} from "react-router-dom";
+import "./Deeds.scss";
+import ToggleButton from "react-toggle-button";
+
 //modals
 import NewOffer from "../../Layout/NewOffer";
 import NewRequest from "../../Layout/NewRequest";
 import NotLoginModal from "../../Layout/NotLoginModal";
+
 //layout
 import OfferHelpList from "../../Layout/OfferHelpList";
 import RequestHelpList from "../../Layout/RequestHelpList";
 import MyTasksList from '../../Layout/MyTaskList';
 import Map from "../../Layout/Map";
 
-import {
-  Switch,
-  Route,
-  NavLink,
-  useRouteMatch,
-  Redirect
-} from "react-router-dom";
-import "./Deeds.scss";
-import ToggleButton from "react-toggle-button";
 
-const HELP_URL = "help";
-
-export default function() {
+export default function () {
   const [requests, setRequests] = useState("");
   const [offers, setOffers] = useState("");
   const [myTasks, setMyTasks] = useState("");
@@ -47,7 +41,7 @@ export default function() {
       const res = await axios.get(url);
       const totalDeeds = res.data;
       setRequests(totalDeeds.filter(el => el.type === 2));
-      setOffers(totalDeeds.filter(el => el.type == 1));
+      setOffers(totalDeeds.filter(el => el.type === 1));
       setMyTasks(
         totalDeeds.filter(
           el =>
@@ -56,7 +50,7 @@ export default function() {
             el.acceptedRequestId === userId
         )
       );
-     
+
       setIsLoading(false);
     } catch (e) {
       console.log("faild to fetch deeds");
@@ -86,13 +80,11 @@ export default function() {
     if (isConnected) setToggleOffer(true);
     else setToggleNotLogin(true);
   };
-  if (isLoading) return <h1>Loading...</h1>;
-  else
     return (
       <section className="deeds-page">
         <div className="row">
           <div>
-        
+
             {/* modals  */}
             {toggleNotLogin && <NotLoginModal onClose={setToggleNotLogin} />}
             {toggleOffer && (
@@ -104,8 +96,8 @@ export default function() {
             <section className="links">
               <div>
                 {/* sub menu */}
-                <NavLink to={`${url}/${HELP_URL}`} className="mr40">
-                  Help offers
+                <NavLink to={`${url}/help`} className="mr40">
+                  Offer to help
                 </NavLink>
                 <NavLink to={`${url}/be-helped`}>Help requests</NavLink>
               </div>
@@ -121,14 +113,12 @@ export default function() {
             <div className="deeds-page__btns-container">
               <button
                 className="btn bg-primary btn__new"
-                onClick={handleNewOffer}
-              >
+                onClick={handleNewOffer}>
                 Offer help
               </button>
               <button
                 className="btn bg-primary btn__new"
-                onClick={handleNewRequest}
-              >
+                onClick={handleNewRequest}>
                 Request help
               </button>
             </div>
@@ -145,7 +135,7 @@ export default function() {
             </div>
           </div>
         </div>
-{/* main route area */}
+        {/* main route area */}
         <div className="row main-content">
           <div className="sub-route">
             <Switch>
@@ -160,8 +150,8 @@ export default function() {
                 />
               </Route>
               <Route path={`${path}/tasks`}>
-                <MyTasksList myTasks={myTasks}/>
-                </Route>
+                <MyTasksList myTasks={myTasks} />
+              </Route>
             </Switch>
           </div>
           {/* map area */}
