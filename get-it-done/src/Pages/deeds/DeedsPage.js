@@ -60,11 +60,12 @@ export default function () {
   useEffect(() => {
     fetchDeeds();
     navigator.geolocation.getCurrentPosition(
+      //get user current position
       ({ coords }) => setPosition([coords.latitude, coords.longitude]),
       undefined,
       { enableHighAccuracy: true }
     );
-  });
+  }, []);
 
   const handleHelpClick = btnType => {
     if (!isConnected) {

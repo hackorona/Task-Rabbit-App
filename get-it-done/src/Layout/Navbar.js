@@ -24,7 +24,7 @@ const Navbar = props => {
     if (userFromStorage) {
       dispatch(login(userFromStorage));
     }
-  })
+  }, [])
 const handleLogout=()=>{
   dispatch(logout);
 
