@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import axios from "axios";
+import { Switch, Route, NavLink, useRouteMatch, Redirect } from "react-router-dom";
+import "./Deeds.scss";
+import ToggleButton from "react-toggle-button";
+
 //modals
 import NewOffer from "../../Layout/NewOffer";
 import NewRequest from "../../Layout/NewRequest";
 import NotLoginModal from "../../Layout/NotLoginModal";
+
 //layout
 import OfferHelpList from "../../Layout/OfferHelpList";
 import RequestHelpList from "../../Layout/RequestHelpList";
 import MyTasksList from "../../Layout/MyTaskList";
 import Map from "../../Layout/Map";
 
-import {
-  Switch,
-  Route,
-  NavLink,
-  useRouteMatch,
-  Redirect
-} from "react-router-dom";
-import "./Deeds.scss";
-import ToggleButton from "react-toggle-button";
 
-const HELP_URL = "help";
-
-export default function() {
+export default function () {
   const [requests, setRequests] = useState("");
   const [offers, setOffers] = useState("");
   const [myTasks, setMyTasks] = useState("");
@@ -139,45 +133,40 @@ export default function() {
             <section className="links">
               <div>
                 {/* sub menu */}
-                <NavLink to={`${url}/${HELP_URL}`} className="mr40">
+                <NavLink to={`${url}/help`} className="mr40">
                   Help offers
                 </NavLink>
-                <NavLink to={`${url}/be-helped`}>Help requests</NavLink>
-              </div>
-              <div>
-                <NavLink to={`${url}/tasks`} className="mr8">
-                  My tasks
+              <NavLink to={`${url}/be-helped`}>Help requests</NavLink>
+            </div>
+            <div>
+              <NavLink to={`${url}/tasks`} className="mr8">
+                My tasks
                 </NavLink>
-              </div>
-            </section>
-            <hr className="links-divider" />
+            </div>
+          </section>
+          <hr className="links-divider" />
+        </div>
+        <div className="deeds-page__right-section">
+          <div className="deeds-page__btns-container">
+            <button
+              className="btn bg-primary btn__new"
+              onClick={handleNewOffer}>
+              Offer help
+              </button>
+            <button
+              className="btn bg-primary btn__new"
+              onClick={handleNewRequest}>
+              Request help
+              </button>
           </div>
-          <div className="deeds-page__right-section">
-            <div className="deeds-page__btns-container">
-              <button
-                className="btn bg-primary btn__new"
-                onClick={handleNewOffer}
-              >
-                Offer help
-              </button>
-              <button
-                className="btn bg-primary btn__new"
-                onClick={handleNewRequest}
-              >
-                Request help
-              </button>
-            </div>
 
-            <div className="toggle">
-              <span>show map?</span>
-              <ToggleButton
-                inactiveLabel=""
-                activeLabel=""
-                value={shouldShowMap}
-                onToggle={value => toggleMap(!value)}
-                colors={{ active: { base: "#fd6064" } }}
-              />
-            </div>
+          <div className="toggle">
+            <span>show map?</span>
+            <ToggleButton
+              inactiveLabel="" activeLabel=""
+              value={shouldShowMap}
+              onToggle={value => toggleMap(!value)}
+              colors={{ active: { base: "#fd6064" } }}/>
           </div>
         </div>
         {/* main route area */}
@@ -201,15 +190,14 @@ export default function() {
                 <MyTasksList myTasks={myTasks} />
               </Route>
             </Switch>
-          </div>
-          {/* map area */}
-          <Map
-            center={position}
-            zoom={14}
-            attributionControl={false}
-            className={shouldShowMap && "show"}
-          />
         </div>
-      </section>
-    );
+        {/* map area */}
+        <Map center={position} zoom={14}
+          attributionControl={false}
+          className={shouldShowMap && "show"}
+        />
+      </div>
+      </div>
+    </section>
+  );
 }

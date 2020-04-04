@@ -9,7 +9,6 @@ export default props => {
         zoom={zoom}
         attributionControl={attributionControl}
         className={className}
-      
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></TileLayer>
         <Marker position={center}>
