@@ -120,22 +120,21 @@ export default function () {
   else
     return (
       <section className="deeds-page">
-      <div className="row">
-        <div>
-
-          {/* modals  */}
-          {toggleNotLogin && <NotLoginModal onClose={setToggleNotLogin} />}
-          {toggleOffer && (
-            <NewOffer onClose={setToggleOffer} userId={userId} />
-          )}
-          {toggleRequest && (
-            <NewRequest onClose={setToggleRequest} userId={userId} />
-          )}
-          <section className="links">
-            <div>
-              {/* sub menu */}
-              <NavLink to={`${url}/help`} className="mr40">
-                Offer to help
+        <div className="row">
+          <div>
+            {/* modals  */}
+            {toggleNotLogin && <NotLoginModal onClose={setToggleNotLogin} />}
+            {toggleOffer && (
+              <NewOffer onClose={setToggleOffer} userId={userId} />
+            )}
+            {toggleRequest && (
+              <NewRequest onClose={setToggleRequest} userId={userId} />
+            )}
+            <section className="links">
+              <div>
+                {/* sub menu */}
+                <NavLink to={`${url}/$help`} className="mr40">
+                  Help offers
                 </NavLink>
               <NavLink to={`${url}/be-helped`}>Help requests</NavLink>
             </div>
@@ -170,16 +169,16 @@ export default function () {
               colors={{ active: { base: "#fd6064" } }}/>
           </div>
         </div>
-      </div>
-      {/* main route area */}
-      <div className="row main-content">
-        <div className="sub-route">
-          {isLoading ? "loading" : (
+        {/* main route area */}
+        <div className="row main-content">
+          <div className="sub-route">
             <Switch>
               <Redirect exact from={path} to={`${path}/help`} />
               <Route path={`${path}/help`}>
-                <OfferHelpList offers={offers} 
-                 handleUseOfferClick={handleUseOfferClick}/>
+                <OfferHelpList
+                  offers={offers}
+                  handleUseOfferClick={handleUseOfferClick}
+                />
               </Route>
               <Route path={`${path}/be-helped`}>
                 <RequestHelpList
@@ -191,13 +190,13 @@ export default function () {
                 <MyTasksList myTasks={myTasks} />
               </Route>
             </Switch>
-          )}
         </div>
         {/* map area */}
         <Map center={position} zoom={14}
           attributionControl={false}
           className={shouldShowMap && "show"}
         />
+      </div>
       </div>
     </section>
   );
