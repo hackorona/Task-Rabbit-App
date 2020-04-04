@@ -62,7 +62,7 @@ export default function() {
       setMyTasks(
         tempMyTasks
       );
-
+      
       setIsLoading(false);
     } catch (e) {
       console.log("faild to fetch deeds");
