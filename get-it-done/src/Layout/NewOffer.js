@@ -10,12 +10,10 @@ export default props => {
   const handleSubmit = async e => {
     e.preventDefault();
     if (title && description && location && radius && helpType) {
-      console.log('new offer-',{ userId, title, description, location, radius,helpType });
       const reqData = { userId, title, description, location, radius, helpType };
       const url = "http://localhost:3001/deeds/addOffer";
       try{
         const res=await axios.post(url,reqData);
-        console.log('success login',res.data);
         onClose(false);
       }catch(e){
         console.log('error in   new offer offer')

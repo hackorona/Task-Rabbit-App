@@ -13,13 +13,12 @@ export default props => {
     if(title&& description && location &&radius && timeRange&& status!=="select"&& status)
     {
 
-        console.log(title,description,location,radius, timeRange,status )
+       
         const userId='das123';
         const reqData={userId,title,description,location,radius, timeRange,status}
         const url='http://localhost:3001/deeds/addDeed';
         try{
           const res=await axios.post(url,reqData);
-          console.log('success login',res.data);
           onClose(false);
         }catch(e){
           console.log('error in  login')

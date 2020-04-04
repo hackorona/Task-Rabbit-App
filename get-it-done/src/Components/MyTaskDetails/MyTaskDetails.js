@@ -3,7 +3,6 @@ import "./MyTaskDetails.scss";
 
 export default (props) => {
     const {task}=props;
-    console.log('taskis',task)
     const {title,description,type,status}=task;
   const distance = "800 meters";
   const time = "today";
@@ -23,7 +22,7 @@ export default (props) => {
               {title}
             </h2>
             <p>{description}</p>
-            <p>{status===1?'Active':'Done'}</p>
+            <p>{status===2?'Active':'Done'}</p>
           </div>
           <div className="my-tasks-extra-details">
             {urgency && <p>Urgency: {urgency}</p>}
@@ -32,7 +31,7 @@ export default (props) => {
           </div>
         </div>
         <div className="my-tasks-actions">
-          <button className="btn btn-more-info">Finish</button>
+  <button className="btn btn-more-info">{type===1?'Done':'Finish'}</button>
           <button className="btn bg-secondary">Message</button>
         </div>
       </section>

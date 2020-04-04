@@ -21,7 +21,7 @@ const ObjectId = require("mongodb").ObjectId;
 //   .then(db => db.collection("posts").updateMany({"userId":userId},{$set:{
 //     "userImg":userImg
 //   }}))
-// } 
+// }
 // function getUserPosts(userId) {
 //   console.log('userId',userId)
 //   return mongoService
@@ -31,7 +31,7 @@ const ObjectId = require("mongodb").ObjectId;
 // function addComment(data){
 //   const {postId,commentText,userId,userImg,username}=data;
 //   const _id=new ObjectId(postId);
-  
+
 //   return mongoService
 //   .connect()
 //   .then(db => db.collection("posts").updateOne({_id:_id},{$push:{
@@ -47,9 +47,9 @@ const ObjectId = require("mongodb").ObjectId;
 //createdAt:timestamp
 //titl,description adress,radius - text
 function addOffer(offer) {
-  offer.type=1;
-  offer.status=1;
-  offer.acceptedOfferId='';
+  offer.type = 1;
+  offer.status = 1;
+  offer.acceptedOfferId = "";
   offer.createdAt = Date.now();
   return mongoService
     .connect()
@@ -64,21 +64,55 @@ function addOffer(offer) {
 //createdAt:timestamp
 //title,description adress,radius,urgency - text
 function addRequest(request) {
-  request.type=2;
-  request.status=1;
-  request.acceptedRequestId='';
+  request.type = 2;
+  request.status = 1;
+  request.acceptedRequestId = "";
   request.createdAt = Date.now();
   return mongoService
     .connect()
     .then(db => db.collection("deeds").insertOne(request));
 }
 function getDeeds() {
-  return mongoService
-    .connect()
-    .then(db => db.collection("deeds").find({}).sort({'createdAt':-1}).toArray())
+  return mongoService.connect().then(db =>
+    db
+      .collection("deeds")
+      .find({})
+      .sort({ createdAt: -1 })
+      .toArray()
+  );
+}
+function assignToRequest({ userId, deedId }) {
+  const id = new ObjectId(deedId);
+  return mongoService.connect().then(db =>
+    db.collection("deeds").updateOne(
+      { "_id": id },
+      {
+        $set: {
+          "acceptedRequestId": userId,
+          "status": 2
+        }
+      }
+    )
+  );
+}
+function assignToOffer({ userId, deedId }) {
+  const id = new ObjectId(deedId);
+  return mongoService.connect().then(db =>
+    db.collection("deeds").updateOne(
+      { "_id": id },
+      {
+        $set: {
+          "acceptedOfferId": userId,
+          "status": 2
+        }
+      }
+    )
+  );
 }
 module.exports = {
   addOffer,
   getDeeds,
-  addRequest
+  addRequest,
+  assignToRequest,
+  assignToOffer
 };

@@ -8,7 +8,7 @@ import NotLoginModal from "../../Layout/NotLoginModal";
 //layout
 import OfferHelpList from "../../Layout/OfferHelpList";
 import RequestHelpList from "../../Layout/RequestHelpList";
-import MyTasksList from '../../Layout/MyTaskList';
+import MyTasksList from "../../Layout/MyTaskList";
 import Map from "../../Layout/Map";
 
 import {
@@ -43,20 +43,26 @@ export default function() {
 
   const fetchDeeds = async () => {
     try {
-      const url = "http://localhost:3001/getDeeds";
-      const res = await axios.get(url);
+      const res = await axios.get("http://localhost:3001/getDeeds");
       const totalDeeds = res.data;
-      setRequests(totalDeeds.filter(el => el.type === 2));
-      setOffers(totalDeeds.filter(el => el.type == 1));
+      let [tempRequests, tempOffers, tempMyTasks] = [[], [], []];
+      totalDeeds.forEach(deed => {
+        if (
+          deed.userId === userId ||
+          deed.acceptedOfferId === userId ||
+          deed.acceptedRequestId === userId
+        ) {
+          tempMyTasks.push(deed);
+        }else if(deed.type===2){tempRequests.push(deed);
+        }else{tempOffers.push(deed)}
+      });
+
+      setRequests(tempRequests);
+      setOffers(tempOffers);
       setMyTasks(
-        totalDeeds.filter(
-          el =>
-            el.userId === userId ||
-            el.acceptedOfferId === userId ||
-            el.acceptedRequestId === userId
-        )
+        tempMyTasks
       );
-     
+
       setIsLoading(false);
     } catch (e) {
       console.log("faild to fetch deeds");
@@ -73,10 +79,40 @@ export default function() {
     );
   }, []);
 
-  const handleHelpClick = btnType => {
+  //when user help another one
+  const handleGetItDoneClick = async requestHelpId => {
     if (!isConnected) {
       setToggleNotLogin(true);
     }
+    //open modal that says good for taking this task
+    else {
+      try {
+        const res = axios.post("http://localhost:3001/deeds/assignToRequest", {
+          requestHelpId,
+          userId
+        });
+      } catch (e) {
+        console.log("error in get it done press");
+      }
+    }
+  };
+  //when user take offer from another user(being helped)
+  const handleUseOfferClick = offerHelpId => {
+    if (!isConnected) {
+      setToggleNotLogin(true);
+    } else {
+      try {
+        const res = axios.post("http://localhost:3001/deeds/assignToOffer", {
+          offerHelpId,
+          userId
+        });
+      } catch (e) {
+        console.log("error in get it done press");
+      }
+    }
+    console.log("handling offer help id is", offerHelpId);
+    // call server to update task to the user as helped
+    //needed userId andtask id
   };
   const handleNewRequest = () => {
     if (isConnected) setToggleRequest(true);
@@ -92,7 +128,6 @@ export default function() {
       <section className="deeds-page">
         <div className="row">
           <div>
-        
             {/* modals  */}
             {toggleNotLogin && <NotLoginModal onClose={setToggleNotLogin} />}
             {toggleOffer && (
@@ -145,23 +180,26 @@ export default function() {
             </div>
           </div>
         </div>
-{/* main route area */}
+        {/* main route area */}
         <div className="row main-content">
           <div className="sub-route">
             <Switch>
               <Redirect exact from={path} to={`${path}/help`} />
               <Route path={`${path}/help`}>
-                <OfferHelpList offers={offers} />
+                <OfferHelpList
+                  offers={offers}
+                  handleUseOfferClick={handleUseOfferClick}
+                />
               </Route>
               <Route path={`${path}/be-helped`}>
                 <RequestHelpList
                   requests={requests}
-                  handleHelpClick={handleHelpClick}
+                  handleGetItDoneClick={handleGetItDoneClick}
                 />
               </Route>
               <Route path={`${path}/tasks`}>
-                <MyTasksList myTasks={myTasks}/>
-                </Route>
+                <MyTasksList myTasks={myTasks} />
+              </Route>
             </Switch>
           </div>
           {/* map area */}

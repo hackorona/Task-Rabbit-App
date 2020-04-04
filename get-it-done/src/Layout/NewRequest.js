@@ -14,7 +14,6 @@ export default props => {
       const url = "http://localhost:3001/deeds/addRequest";
       try{
         const res=await axios.post(url,reqData);
-        console.log('success login',res.data);
         onClose(false);
       }catch(e){
         console.log('error in  login')

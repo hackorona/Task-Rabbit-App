@@ -2,7 +2,6 @@ import React from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 export default props => {
   const { center, zoom, attributionControl, className } = props;
-    console.log(props);
   return (
     <div className="map">
       <Map

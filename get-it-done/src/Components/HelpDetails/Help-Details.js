@@ -2,13 +2,12 @@ import React from "react";
 import "./Help-Details.scss";
 
 export default function HelpDetails({
-  urgency,
-  distance,
-  time,
-  title,
-  description,
-  handleHelpClick
+  request,
+  handleGetItDoneClick
 }) {
+  const distance="4 km";
+  const time="42 minutes";
+  const {title,description,_id}=request;
   return (
     <>
       <section className="help-details">
@@ -23,14 +22,13 @@ export default function HelpDetails({
             <p>{description}</p>
           </div>
           <div className="help-extra-details">
-            {urgency && <p>Urgency: {urgency}</p>}
             <p>{distance} away</p>
             <p>{time} ago</p>
           </div>
         </div>
         <div className="help-actions">
           <button className="btn bg-secondary">Message</button>
-          <button className="btn btn-more-info" onClick={handleHelpClick}>Help</button>
+          <button className="btn btn-more-info" onClick={()=>handleGetItDoneClick(_id)}>Get it done</button>
         </div>
       </section>
       <hr className="help-divider" />

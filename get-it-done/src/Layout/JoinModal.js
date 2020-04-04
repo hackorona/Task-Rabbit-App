@@ -15,13 +15,12 @@ export default props => {
 
       if(password===confirmPassword && username&& password&&phone&&city)
         {
-          console.log('sending request');
+         
           const user={username,password,phone,city};
           const url='http://localhost:3001/user/register';
           try{
 
             const res=await axios.post(url,user);
-            console.log('success register',res.data);
             dispatch(login(res.data));
             onClose(false);
           }catch(e){
