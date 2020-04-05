@@ -1,0 +1,35 @@
+.task-complete-modal{
+
+    .thanks-caption {
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin: 2rem auto;
+    }
+    .math-result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width:10rem;
+        }
+    }
+    .u-modal-container{
+        padding:4rem;
+    }
+    
+
+}
+
+
+
+
+
+.coin-math {
+    padding: 20px;
+}
+
+.math-row {
+    display: flex;
+    justify-content: space-between;
+}
+

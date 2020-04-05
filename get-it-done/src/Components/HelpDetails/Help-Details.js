@@ -13,13 +13,14 @@ export default function HelpDetails({
       <section className="help-details">
         <img
           className="help-image"
-          src="https://res.cloudinary.com/thelegend27/image/upload/v1585333256/img/hammer_i4afmv.png"
+          src="https://res.cloudinary.com/thelegend27/image/upload/v1585333265/img/fruits_srxewz.png"
           alt=""
         />
         <div className="help-content">
           <div>
             <h2 className="help-details__sub-header">{title}</h2>
             <p>{description}</p>
+            <p className="coins-price">price : 13 Coins </p>
           </div>
           <div className="help-extra-details">
             <p>{distance} away</p>

@@ -13,6 +13,7 @@ const Navbar = props => {
 
   const dispatch = useDispatch();
   const isConnected = useSelector(state => state.isConnected);
+  const score = useSelector(state => state.score);
   const user = useSelector(state => state.user);
   const [isSignOpen, setIsSignOpen] = useState(false);
   const [isJoinOpen, setIsJoinOpen] = useState(false);
@@ -36,14 +37,14 @@ const handleLogout=()=>{
           call
       </button>
       </div>
-      <div style={{ justifyContent: 'center' }}>
-        <img src="https://res.cloudinary.com/thelegend27/image/upload/v1585391297/img/logo_d6ciuu.png" alt="deeds-logo"/>
+      <div  className="deeds-logo">
+        <img src="https://res.cloudinary.com/explority/image/upload/v1586087789/deeds_logo_fftqxy.png" alt="deeds-logo"/>
       </div>
-
       <div style={{ justifyContent: 'flex-end' }}>
-        {isConnected ? (<span>
-          <span>score :  {user.score} </span>
-          <span onClick={handleLogout}>Logout</span>
+        {isConnected ? (<span className="connected-box">
+          <p>{score} Coins</p>   
+          <p onClick={handleLogout}>Logout</p>   
+          <span className="user-img"><img src="https://res.cloudinary.com/explority/image/upload/v1556370946/review2_acdcli.jpg"/></span>
         </span>
         ) : (<>
           <button

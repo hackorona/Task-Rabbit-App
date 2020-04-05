@@ -10,7 +10,7 @@ export default ({ offer, handleUseOfferClick }) => {
       <section className="offer-details">
         <img
           className="offer-image"
-          src="https://res.cloudinary.com/thelegend27/image/upload/v1585333256/img/hammer_i4afmv.png"
+          src="https://res.cloudinary.com/thelegend27/image/upload/v1585333265/img/fruits_srxewz.png"
           alt=""
         />
         <div className="offer-content">

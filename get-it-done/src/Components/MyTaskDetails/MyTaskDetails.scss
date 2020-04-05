@@ -1,4 +1,22 @@
 .my-tasks-details {
+  .coins-price{
+    font-family: monts-bold;
+    font-size: 14px;
+  }
+  border-bottom: 1px solid #c1c1c1;
+  padding-bottom: 2rem;
+  margin-bottom:2rem;
+  display: flex;
+  justify-content: space-between;
+  .username{
+    font-family: monts-bold;
+    font-size: 14px;
+  }
+  .deed-type{
+    line-height: 1.2;
+    font-size: 1.2rem;
+    font-family: monts-medium;
+  }
     &__sub-header {
       font-size: 2rem;
       font-family: monts-bold;
@@ -9,7 +27,8 @@
       background-color: white;
       color: var(--color-secondary);
     }
-  }
+
+  
   
   .my-tasks-extra-details,
   .my-tasks-actions,
@@ -54,4 +73,4 @@
   .my-tasks-divider {
     margin: 16px 0;
   }
-  
+}

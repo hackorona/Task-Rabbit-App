@@ -9,4 +9,25 @@
       flex: 1 0 0;
       display: flex;
   }
+  .connected-box{
+    display: flex;
+    align-items: center;
+    p{
+      margin-right: 1.5rem;;
+    }
+  }
+  .deeds-logo{
+    justify-content: center;
+    img{
+      width:100px;
+    }
+  }
+  .user-img{
+    img{
+      width:6rem;
+      height:6rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
 }

@@ -6,7 +6,7 @@
 }
 .u-modal-backdrop{
     position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 9999; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -38,7 +38,7 @@
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    z-index: 11;
+    z-index: 99999;
     top:50%;
     left:50%;
     color:black;
